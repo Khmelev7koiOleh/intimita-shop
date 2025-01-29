@@ -88,7 +88,7 @@ onUnmounted(() => {
       :class="
         sidebarStore.isSidebarOpenMore
           ? 'translate-x-0 duration-1000 opacity-100'
-          : '-translate-x-full duration-1000 opacity-100'
+          : '-translate-x-[200%] duration-1000 opacity-100'
       "
     >
       <LayoutSidebarCatalog
