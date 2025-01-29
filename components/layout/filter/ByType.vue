@@ -46,12 +46,13 @@ watchEffect(() => {
 
 // Handle filter button click
 const onFilterClick = () => {
-  if (!props.data || !props.filterType || !props.filterBy) {
-    console.warn("Invalid filter criteria or data.");
+  if (!props.filterType || !props.filterBy) {
+    console.warn("Missing filter criteria");
     return;
   }
 
-  // Emit active filter
+  // Update global filter state
+  filterValues.value = props.filterBy;
   emit("setActiveFilter", props.filterBy);
 };
 </script>
