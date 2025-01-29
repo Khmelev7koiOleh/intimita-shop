@@ -20,8 +20,14 @@ const props = defineProps<{
 // Reactive filtered data
 const filteredOrders = ref<any[]>([]);
 
+watchEffect(() => {
+  console.log("filterValues.value:", filterValues.value);
+  console.log("props.filterBy:", props.filterBy);
+});
 // Watch `filterValues` and `props` to update filteredOrders
 watchEffect(() => {
+  console.log("filterValues.value:", filterValues.value);
+  console.log("props.filterBy:", props.filterBy);
   if (!props.data || !props.filterType) {
     filteredOrders.value = [];
     return;
@@ -46,7 +52,7 @@ const onFilterClick = () => {
   }
 
   // Emit active filter
-  emit("setActiveFilter", (filterValues.value as string) || props.filterBy);
+  emit("setActiveFilter", props.filterBy);
 };
 </script>
 

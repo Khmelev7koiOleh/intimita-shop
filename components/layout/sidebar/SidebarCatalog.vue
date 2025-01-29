@@ -6,7 +6,6 @@ import { useSidebarFilter } from "~/composables/useSidebarFilter";
 
 const { closeSidebarIfOpen } = useCloseSidebarIfOpen();
 
-const filterValue = ref();
 const sidebarStore = useSidebarStore();
 
 const props = defineProps({
@@ -44,12 +43,17 @@ const handleSubmit = (i: any) => {
         {{ props.title.name }}
       </NuxtLink>
       <div v-for="item in props.items" :key="item.name">
-        <div
-          @click="handleSubmit((filterValue = item.filterBy))"
+        <NuxtLink
+          :to="props.url"
+          @click="
+            handleSubmit((filterValues = item.filterBy)),
+              (sidebarStore.isPhoneOpen = false),
+              closeSidebarIfOpen()
+          "
           class="text-[12px] 2xl:text-[16px] text-black p-1 hover:text-[#FFD095] hover:translate-x-2 duration-500"
         >
           {{ item.name }}
-        </div>
+        </NuxtLink>
       </div>
     </div>
   </div>
