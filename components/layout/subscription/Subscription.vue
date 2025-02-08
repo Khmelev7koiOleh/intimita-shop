@@ -30,7 +30,7 @@ const isSubscribed = useIsSubscribedStore();
             <LayoutSubscriptionForm />
           </div>
         </div>
-        <!-- Subscription Confirmation -->
+
         <div
           :class="
             isSubscribed.isSubscribed
