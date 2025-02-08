@@ -30,12 +30,12 @@ const isSubscribed = useIsSubscribedStore();
             <LayoutSubscriptionForm />
           </div>
         </div>
-
+        <!-- Subscription complete -->
         <div
           :class="
             isSubscribed.isSubscribed
-              ? 'absolute top-0 left-0 max-w-[100%] w-full h-[55%] bg-black text-white text-3xl sm:text-4xl md:text-5xl flex justify-center items-center font-light font-monospace opacity-100 transition-all duration-1000'
-              : 'absolute  top-0 left-0 max-w-[100%] w-full h-[55%] bg-black text-white text-3xl sm:text-4xl md:text-5xl flex justify-center items-center font-light font-monospace opacity-0 -translate-x-full transition-all duration-1000'
+              ? 'absolute top-0 left-0 max-w-[100%] w-full h-[55%] md:h-[100%] bg-black text-white text-3xl sm:text-4xl md:text-5xl flex justify-center items-center font-light font-monospace opacity-100 transition-all duration-1000'
+              : 'absolute  top-0 left-0 max-w-[100%] w-full h-[55%] md:h-[100%] bg-black text-white text-3xl sm:text-4xl md:text-5xl flex justify-center items-center font-light font-monospace opacity-0 -translate-x-full transition-all duration-1000'
           "
           class="z-10"
         >
